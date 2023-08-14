@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-08-09T17:59:56.700Z",
+    "end": "2023-08-09T18:00:07.133Z",
+    "duration": 10433,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d26bd8d5-1fd7-49d1-b279-86e31c77b346",
+      "title": "",
+      "fullFile": "cypress/integration/UI/Shopping.js",
+      "file": "cypress/integration/UI/Shopping.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d478874-2d39-4322-a49a-0d9c22f87cf7",
+          "title": "Shopping",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "When I want to verify the items prices with the total price",
+              "fullTitle": "Shopping When I want to verify the items prices with the total price",
+              "timedOut": null,
+              "duration": 3124,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let sum = 0;\nshoppage.getAmountOfAll().each(($el, index, $list) => {\n  const actualAmount = $el.text();\n  const result = actualAmount.split(\" \")[1].trim();\n  sum += Number(result);\n}).then(function () {\n  cy.log(sum);\n  shoppage.getTotalAmount().then(function ($el) {\n    const totalAmount = Number($el.text().split(\" \")[1].trim());\n    expect(sum).to.equal(totalAmount);\n  });\n});",
+              "err": {},
+              "uuid": "6d07e2d5-a126-4ac7-8eb2-4a8419bf1401",
+              "parentUUID": "0d478874-2d39-4322-a49a-0d9c22f87cf7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6d07e2d5-a126-4ac7-8eb2-4a8419bf1401"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3124,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
