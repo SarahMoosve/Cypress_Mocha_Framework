@@ -9,6 +9,7 @@ This repository contains E2E tests for an e-commerce website using Cypress with 
 
 - Commands: This folder contains custom cypress commands which are frequently used inside the application
 
+
 ## Setup & Installation
 1. Clone the Repository:
 
@@ -26,12 +27,33 @@ npx cypress open
 ```
 After opening, select the desired feature file or run all tests as needed.
 
-5. Run a Specific Feature:
+5. Run a Specific TestCase:
 ```bash
-npx cypress run --spec "path/to/ecommerce.feature"
+npx cypress run --spec "add_path_to_project/cypress/integration/UI/name_of_file"
 ```
 
 
 Page Object Model
 The Page Object Model (POM) is a design pattern that allows for better test maintenance and reduces code duplication. A page object is created for each page of the application, and it encapsulates the page's locators and functions. By following the POM pattern, any changes in the UI can be easily managed in the page object, without having to change the test logic or step definitions.
 
+## Mochawesome-report
+- Mochawesome-report: This folder contains `mochawesome.html` which carries the HTML report of the executed tests.
+
+1. Run the Cypress tests:
+```bash
+npx cypress run
+```
+A Json report will be generated.
+
+2. Merge the JSON reports:
+
+```bash
+npx mochawesome-merge "cypress/reports/mochawesome/mochawesome-report-*.json" > "cypress/reports/mochawesome/mochawesome.json"
+```
+
+2. Generate the consolidated HTML Report:
+
+```bash
+npx marge cypress/reports/mochawesome/mochawesome.json -f report -o cypress/reports/mochawesome"
+```
+Hit the URL in the browser to see the reports.

@@ -31,5 +31,17 @@ module.exports = defineConfig({
     setupNodeEvents,
     specPattern: 'cypress/integration/UI/**/*.js'
   },
+
+  reporter: "mochawesome",
+  reporterOptions: {
+    reportDir: "cypress/reports/mochawesome",
+    overwrite: false,
+    html: false,
+    json: true,
+    reportFilename: "mochawesome-report-[hash]"
+  }
+
+  
+  
   
 });
