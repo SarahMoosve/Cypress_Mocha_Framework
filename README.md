@@ -25,9 +25,9 @@ npm install
 ```bash
 npx cypress open
 ```
-After opening, select the desired feature file or run all tests as needed.
+After opening, select the desired .js file.
 
-5. Run a Specific TestCase:
+5. Run a Specific test file:
 ```bash
 npx cypress run --spec "add_path_to_project/cypress/integration/UI/name_of_file"
 ```
